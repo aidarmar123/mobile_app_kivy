@@ -1,0 +1,120 @@
+<RowTable>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            color:'black'
+            text:root.text
+        Label:
+            color:'black'
+            text:root.text
+    Button:
+        text:root.text
+        padding:10
+    Button:
+        text:root.text
+        padding:10
+
+<scrollPage>:
+    viewclass:"RowTable"
+    RecycleBoxLayout:
+        size_hint_y: None
+        height: self.minimum_height
+        default_size_hint: 1, None
+        orientation: 'vertical'
+
+
+
+<RowTableOrder>:
+    Label:
+        text:root.name
+        color:'black'
+    Button:
+        text:'Отправить'
+
+<tableOrderPage>:
+    viewclass:"RowTableOrder"
+    RecycleBoxLayout:
+        size_hint_y: None
+        height: self.minimum_height
+        default_size_hint: 1, None
+        orientation: 'vertical'
+
+
+<PageManager>
+    ElScreen:
+    TBScreen:
+
+
+<ElScreen>:
+    name:'table'
+    AnchorLayout:
+        anchor_x:'center'
+        anchor_y:'top'
+        padding:10
+        BoxLayout:
+            orientation:'vertical'
+            BoxLayout:
+                size_hint_y:None
+                Button:
+                    size_hint_y:None
+
+
+                Button:
+                    size_hint_y:None
+
+
+                Button:
+                    size_hint_y:None
+
+
+                Button:
+                    size_hint_y:None
+            scrollPage:
+
+
+
+
+<TBScreen>:
+    name:'screen2'
+    Button:
+        background_normal:''
+    tableOrderPage:
+
+
+
+<Page>:
+    cols:1
+    PageManager:
+        id:PM
+
+
+
+    AnchorLayout:
+        size_hint_y:None
+        anchor_x:'center'
+        anchor_y:'bottom'
+        BoxLayout:
+
+            Button:
+                size_hint_y:None
+                on_press:root.pageTable()
+
+
+            Button:
+                size_hint_y:None
+                id:btn1
+                on_press:root.screen1()
+
+            Button:
+                size_hint_y:None
+
+
+
+
+
+
+
+
+
+
